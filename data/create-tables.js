@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const client = require('../lib/client');
 const { getEmoji } = require('../lib/emoji.js');
 
@@ -22,8 +23,8 @@ async function run() {
             key VARCHAR(512) NOT NULL,
             chord VARCHAR(512) NOT NULL,
             major VARCHAR(512) NOT NULL,
-            class VARCHAR(512) NOT NULL,
-            owner_id INTEGER NOT NULL REFERENCES users(id)
+            class VARCHAR(512) NOT NULL
+            
         );
     `);
 

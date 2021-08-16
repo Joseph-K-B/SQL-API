@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
 const client = require('../lib/client');
 // import our seed data:
-const chords = require('./chords.js');
+const chordData = require('./chords.js');
 const { getEmoji } = require('../lib/emoji.js');
 
 run();
@@ -11,12 +12,21 @@ async function run() {
     await client.connect();
 
     await Promise.all(
-      chords.map(chord => {
+      chordData.map(chord => {
         return client.query(`
-                    INSERT INTO chords (id, key, chord, major, class)
-                    VALUES ($1, $2, $3, $4, $5) RETURNING *;
+                    INSERT INTO chords ( 
+                      key, 
+                      chord, 
+                      major, 
+                      class)
+                    VALUES ($1, $2, $3, $4) RETURNING *;
                 `,
-        [chord.id, chord.key, chord.chord, chord.major, chord.class]);
+        [ 
+          chord.key, 
+          chord.chord, 
+          chord.major, 
+          chord.class
+        ]);
       })
     );
     

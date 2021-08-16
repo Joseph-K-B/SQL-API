@@ -14,10 +14,19 @@ async function run() {
     await Promise.all(
       chordData.map(chord => {
         return client.query(`
-                    INSERT INTO chords (id, key, chord, major, class)
-                    VALUES ($1, $2, $3, $4, $5) RETURNING *;
+                    INSERT INTO chords ( 
+                      key, 
+                      chord, 
+                      major, 
+                      class)
+                    VALUES ($1, $2, $3, $4) RETURNING *;
                 `,
-        [chord.id, chord.key, chord.chord, chord.major, chord.class]);
+        [ 
+          chord.key, 
+          chord.chord, 
+          chord.major, 
+          chord.class
+        ]);
       })
     );
     

@@ -22,8 +22,8 @@ async function run() {
             id SERIAL PRIMARY KEY NOT NULL,
             key VARCHAR(512) NOT NULL,
             chord VARCHAR(512) NOT NULL,
-            major VARCHAR(512),
-            class VARCHAR(512) NOT NULL,
+            major VARCHAR(512) NOT NULL,
+            class VARCHAR(512) NOT NULL
             
         );
     `);

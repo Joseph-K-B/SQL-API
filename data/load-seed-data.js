@@ -19,7 +19,8 @@ async function run() {
                       chord, 
                       major, 
                       class)
-                    VALUES ($1, $2, $3, $4) RETURNING *;
+                    VALUES ($1, $2, $3, $4) 
+                    RETURNING *;
                 `,
         [ 
           chord.key, 

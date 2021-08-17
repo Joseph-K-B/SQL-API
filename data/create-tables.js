@@ -18,15 +18,15 @@ async function run() {
             email VARCHAR(256) NOT NULL,
             hash VARCHAR(512) NOT NULL
         );
-        CREATE TABLE class (
+        CREATE TABLE classes (
           id SERIAL PRIMARY KEY,
-          class VARCHAR(512) NOT NULL,
+          class VARCHAR(512) NOT NULL
       );            
         CREATE TABLE chords (
             id SERIAL PRIMARY KEY NOT NULL,
             key VARCHAR(512) NOT NULL,
             chord VARCHAR(512) NOT NULL,
-            major VARCHAR(512) NOT NULL,
+            major BOOLEAN NOT NULL,
             class_id INTEGER NOT NULL REFERENCES classes(id)
             
         );

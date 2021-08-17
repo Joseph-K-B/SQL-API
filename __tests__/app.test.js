@@ -34,14 +34,14 @@ describe('app routes', () => {
     test('returns chords', async() => {
 
       const expectation = chordData.map(chord => chord.chord);
-      const expectedShape =
+      const expectedObject =
         {
           id:1,
           key: 'c-major',
           chord: 'C-major',
           major: true,
           class_id: 1
-        }
+        };
       
 
       const data = await fakeRequest(app)
@@ -51,7 +51,7 @@ describe('app routes', () => {
       const chords = data.body.map(chord => chord.chord);
       expect(chords).toEqual(expectation);
       expect(chords.length).toBe(chordData.length);
-      expect(data.body[0]).toEqual(expectedShape);
+      expect(data.body[0]).toEqual(expectedObject);
     }, 100000);
 
     test('GET /chords/:id returns the individual chord', async ()=>{

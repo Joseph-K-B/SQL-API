@@ -40,7 +40,8 @@ describe('app routes', () => {
           key: 'c-major',
           chord: 'C-major',
           major: true,
-          class_id: 1
+          class_id: 1,
+          class: 'primary'
         };
       
 
@@ -72,7 +73,7 @@ describe('app routes', () => {
         key: 'c#-major',
         chord: 'c#-major',
         major: true,
-        class: 'primary'
+        class_id: 1
       };
 
       const data = await fakeRequest(app)
@@ -91,7 +92,7 @@ describe('app routes', () => {
         key: 'c-major',
         chord: 'C-major',
         major: true,
-        class: 'primary'
+        class_id: 1
       };
       const data = await fakeRequest(app)
         .put('/chords/1')

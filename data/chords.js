@@ -4,7 +4,10 @@ module.exports = [
     key: 'c-major',
     chord: 'C-major',
     major: true,
-    class_id: 1
+    class_id: 1,
+    img_url: 'x',
+    sound_url: 'y',
+    triad: 'z'
   },
   {
     id:2,

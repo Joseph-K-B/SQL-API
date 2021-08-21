@@ -37,7 +37,7 @@ describe('app routes', () => {
       const expectedObject =
         {
           id:1,
-          key: 'c-major',
+          musical_key: 'c-major',
           chord: 'C-major',
           major: true,
           class_id: 1,
@@ -70,7 +70,7 @@ describe('app routes', () => {
 
     test('POST /chords creates new chord', async ()=>{
       const newChord = {
-        key: 'c#-major',
+        musical_key: 'c#-major',
         chord: 'c#-major',
         major: true,
         class_id: 1
@@ -89,7 +89,7 @@ describe('app routes', () => {
     test('PUT /chords/:id updates chords', async ()=>{
       const newData = {
         id:1,
-        key: 'c-major',
+        musical_key: 'c-major',
         chord: 'C-major',
         major: true,
         class_id: 1
@@ -100,7 +100,7 @@ describe('app routes', () => {
         .expect(200)
         .expect('Content-Type', /json/);
         
-      expect(data.body.key).toEqual(newData.key);
+      expect(data.body.musical_key).toEqual(newData.musical_key);
       expect(data.body.chord).toEqual(newData.chord);
       expect(data.body.major).toEqual(newData.major);
     });

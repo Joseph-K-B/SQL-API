@@ -24,7 +24,7 @@ async function run() {
       );            
         CREATE TABLE chords (
             id SERIAL PRIMARY KEY NOT NULL,
-            key VARCHAR(512) NOT NULL,
+            musical_key VARCHAR(512) NOT NULL,
             chord VARCHAR(512) NOT NULL,
             major BOOLEAN NOT NULL,
             class_id INTEGER NOT NULL REFERENCES classes(id)

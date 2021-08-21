@@ -28,7 +28,7 @@ async function run() {
       chordData.map(chord => {
         return client.query(`
                     INSERT INTO chords ( 
-                      key, 
+                      musical_key, 
                       chord, 
                       major, 
                       class_id)
@@ -36,7 +36,7 @@ async function run() {
                     RETURNING *;
                 `,
         [ 
-          chord.key, 
+          chord.musical_key, 
           chord.chord, 
           chord.major, 
           chord.class_id
